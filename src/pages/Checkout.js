@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { sendOrderConfirmationEmail } from '../services/emailService';
 import './Checkout.css';
 
 const Checkout = () => {
   const { cartItems, getCartTotal, clearCart } = useCart();
   const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
+  const [processingMessage, setProcessingMessage] = useState('');
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -19,12 +21,25 @@ const Checkout = () => {
   });
   const [errors, setErrors] = useState({});
 
+  // Handle empty cart navigation
+  useEffect(() => {
+    if (cartItems.length === 0) {
+      navigate('/cart');
+    }
+  }, [cartItems.length, navigate]);
+
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-PK', {
       style: 'currency',
       currency: 'PKR',
       minimumFractionDigits: 0,
     }).format(price);
+  };
+
+  const SHIPPING_FEE = 250;
+
+  const getTotalWithShipping = () => {
+    return getCartTotal() + SHIPPING_FEE;
   };
 
   const handleInputChange = (e) => {
@@ -81,40 +96,98 @@ const Checkout = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    console.log('=== CHECKOUT DEBUG START ===');
+    console.log('Form submitted!');
+    console.log('Form data:', formData);
+    console.log('Cart items:', cartItems);
+    console.log('Cart total:', getCartTotal());
+    
     if (!validateForm()) {
+      console.log('❌ Form validation FAILED');
+      console.log('Errors:', errors);
       return;
     }
 
+    console.log('✅ Form validation PASSED');
     setIsProcessing(true);
+    setProcessingMessage('Processing your order...');
 
-    // Simulate order processing
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      console.log('🔄 Starting order processing...');
+      // Simulate order processing
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Generate order ID
       const orderId = `OO${Date.now()}`;
+      console.log('📋 Generated order ID:', orderId);
       
+      // Prepare order data for email
+      const orderData = {
+        orderId,
+        customerInfo: formData,
+        items: cartItems,
+        subtotal: getCartTotal(),
+        shipping: SHIPPING_FEE,
+        total: getTotalWithShipping()
+      };
+      
+      console.log('📦 Order data prepared:', orderData);
+      
+      // Send order confirmation email
+      setProcessingMessage('Sending confirmation email...');
+      console.log('📧 Attempting to send email...');
+      const emailResult = await sendOrderConfirmationEmail(orderData);
+      
+      console.log('📧 Email result:', emailResult);
+      
+      if (emailResult.success) {
+        console.log('✅ Email sent successfully');
+        setProcessingMessage('Order complete! Redirecting...');
+      } else {
+        console.log('❌ Email failed, but continuing');
+        setProcessingMessage('Order placed successfully! Redirecting...');
+      }
+      
+      // Brief pause to show success message
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      console.log('🗑️ Clearing cart...');
       // Clear cart
       clearCart();
       
-      // Navigate to success page with order details
-      navigate('/order-success', { 
-        state: { 
-          orderId, 
-          customerInfo: formData,
-          items: cartItems,
-          total: getCartTotal()
-        } 
-      });
+      // Prepare navigation data
+      const navigationData = {
+        orderId, 
+        customerInfo: formData,
+        items: cartItems,
+        subtotal: getCartTotal(),
+        shipping: SHIPPING_FEE,
+        total: getTotalWithShipping(),
+        emailSent: emailResult.success
+      };
+      
+      console.log('🔄 Navigation data:', navigationData);
+      console.log('🔄 Navigating to order success...');
+      
+      // Use setTimeout to ensure navigation happens after current render cycle
+      setTimeout(() => {
+        navigate('/order-success', { 
+          state: navigationData
+        });
+        console.log('✅ Navigation complete');
+      }, 100);
     } catch (error) {
-      console.error('Order processing failed:', error);
+      console.error('💥 Order processing failed:', error);
       setIsProcessing(false);
+      setProcessingMessage('');
     }
+    
+    console.log('=== CHECKOUT DEBUG END ===');
   };
 
+  // Don't render if cart is empty (useEffect will handle navigation)
   if (cartItems.length === 0) {
-    navigate('/cart');
-    return null;
+    return <div>Redirecting to cart...</div>;
   }
 
   return (
@@ -265,7 +338,7 @@ const Checkout = () => {
                 className="place-order-btn"
                 disabled={isProcessing}
               >
-                {isProcessing ? 'Processing Order...' : 'Place Order'}
+                {isProcessing ? (processingMessage || 'Processing Order...') : 'Place Order'}
               </button>
             </form>
           </div>
@@ -296,18 +369,18 @@ const Checkout = () => {
                 </div>
                 <div className="total-line">
                   <span>Shipping</span>
-                  <span className="free">Free</span>
+                  <span>{formatPrice(SHIPPING_FEE)}</span>
                 </div>
                 <div className="total-line grand-total">
                   <span>Total</span>
-                  <span>{formatPrice(getCartTotal())}</span>
+                  <span>{formatPrice(getTotalWithShipping())}</span>
                 </div>
               </div>
 
               <div className="order-features">
                 <div className="feature">
                   <span>🚚</span>
-                  <span>Free delivery across Pakistan</span>
+                  <span>Fast delivery across Pakistan</span>
                 </div>
                 <div className="feature">
                   <span>🔒</span>

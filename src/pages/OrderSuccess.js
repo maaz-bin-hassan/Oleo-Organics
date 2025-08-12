@@ -4,7 +4,15 @@ import './OrderSuccess.css';
 
 const OrderSuccess = () => {
   const location = useLocation();
-  const { orderId, customerInfo, items, total } = location.state || {};
+  const { orderId, customerInfo, items, subtotal, shipping, total, emailSent } = location.state || {};
+
+  console.log('=== ORDER SUCCESS DEBUG ===');
+  console.log('Location state:', location.state);
+  console.log('Order ID:', orderId);
+  console.log('Customer info:', customerInfo);
+  console.log('Items:', items);
+  console.log('Email sent:', emailSent);
+  console.log('========================');
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-PK', {
@@ -43,6 +51,13 @@ const OrderSuccess = () => {
           <div className="success-message">
             <h1>Order Placed Successfully!</h1>
             <p>Thank you for your order. We'll contact you soon to confirm delivery details.</p>
+            {emailSent && (
+              <div className="email-confirmation">
+                <p className="email-sent">
+                  📧 Order confirmation email has been sent to <strong>{customerInfo?.email}</strong>
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="order-details">
@@ -56,6 +71,14 @@ const OrderSuccess = () => {
                 <div className="info-item">
                   <span className="label">Payment Method:</span>
                   <span className="value">Cash on Delivery</span>
+                </div>
+                <div className="info-item">
+                  <span className="label">Subtotal:</span>
+                  <span className="value">{formatPrice(subtotal)}</span>
+                </div>
+                <div className="info-item">
+                  <span className="label">Shipping:</span>
+                  <span className="value">{formatPrice(shipping)}</span>
                 </div>
                 <div className="info-item">
                   <span className="label">Total Amount:</span>

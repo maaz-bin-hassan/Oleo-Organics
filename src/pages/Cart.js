@@ -13,6 +13,12 @@ const Cart = () => {
   } = useCart();
   const navigate = useNavigate();
 
+  const SHIPPING_FEE = 250;
+
+  const getTotalWithShipping = () => {
+    return getCartTotal() + SHIPPING_FEE;
+  };
+
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-PK', {
       style: 'currency',
@@ -140,12 +146,12 @@ const Cart = () => {
               
               <div className="summary-line">
                 <span>Shipping</span>
-                <span className="free-shipping">Free</span>
+                <span>{formatPrice(SHIPPING_FEE)}</span>
               </div>
               
               <div className="summary-line total">
                 <span>Total</span>
-                <span>{formatPrice(getCartTotal())}</span>
+                <span>{formatPrice(getTotalWithShipping())}</span>
               </div>
 
               <div className="cart-actions">
@@ -173,7 +179,7 @@ const Cart = () => {
                 <div className="shipping-info">
                   <span className="shipping-icon">🚚</span>
                   <div>
-                    <strong>Free Shipping</strong>
+                    <strong>Fast Shipping - {formatPrice(SHIPPING_FEE)}</strong>
                     <p>Delivery across Pakistan</p>
                   </div>
                 </div>
