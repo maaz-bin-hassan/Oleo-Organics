@@ -1,0 +1,469 @@
+.about {
+  min-height: 100vh;
+  padding-top: 90px;
+  background: linear-gradient(135deg, #f8f9f5 0%, #ffffff 100%);
+}
+
+.about-hero {
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  color: #2c3e20;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.about-hero p {
+  font-size: 1.3rem;
+  color: #789963;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Story Section */
+.about-story {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.story-content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+  align-items: center;
+}
+
+.story-text h2 {
+  font-size: 2.2rem;
+  color: #2c3e20;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.story-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.story-text p:last-child {
+  margin-bottom: 0;
+}
+
+.story-image {
+  display: flex;
+  justify-content: center;
+}
+
+.image-placeholder {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #789963, #9cb36d);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(120, 153, 99, 0.3);
+}
+
+.image-placeholder span {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.image-placeholder p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Mission Section */
+.about-mission {
+  text-align: center;
+}
+
+.about-mission h2 {
+  font-size: 2.5rem;
+  color: #2c3e20;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.mission-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(120, 153, 99, 0.15);
+}
+
+.mission-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mission-card h3 {
+  font-size: 1.4rem;
+  color: #2c3e20;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.mission-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Values Section */
+.about-values {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.values-content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+  align-items: center;
+}
+
+.values-text h2 {
+  font-size: 2.2rem;
+  color: #2c3e20;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.values-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.value-item h4 {
+  font-size: 1.2rem;
+  color: #789963;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.value-item p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.values-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #789963, #9cb36d);
+  border-radius: 15px;
+  color: white;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Ingredients Section */
+.about-ingredients {
+  text-align: center;
+}
+
+.about-ingredients h2 {
+  font-size: 2.5rem;
+  color: #2c3e20;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.ingredient-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.ingredient-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(120, 153, 99, 0.15);
+}
+
+.ingredient-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.ingredient-card h4 {
+  font-size: 1.2rem;
+  color: #2c3e20;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.ingredient-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Commitment Section */
+.about-commitment {
+  background: linear-gradient(135deg, #2c3e20, #3a5229);
+  color: white;
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.commitment-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.commitment-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.commitment-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.commitment-features .feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.commitment-features .feature-icon {
+  font-size: 1.2rem;
+  color: #9cb36d;
+}
+
+.commitment-features .feature span:last-child {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .about {
+    padding-top: 80px;
+  }
+
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-hero p {
+    font-size: 1.1rem;
+  }
+
+  .about-content {
+    gap: 3rem;
+  }
+
+  .about-story,
+  .about-values,
+  .about-commitment {
+    padding: 2rem;
+  }
+
+  .story-content,
+  .values-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .story-text h2,
+  .values-text h2,
+  .about-mission h2,
+  .about-ingredients h2 {
+    font-size: 1.8rem;
+  }
+
+  .mission-grid,
+  .ingredients-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mission-card,
+  .ingredient-card {
+    padding: 2rem;
+  }
+
+  .values-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .stat-item {
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .commitment-features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding-top: 70px;
+  }
+
+  .about-hero {
+    padding: 2rem 0;
+  }
+
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero p {
+    font-size: 1rem;
+  }
+
+  .about-content {
+    gap: 2rem;
+  }
+
+  .about-story,
+  .about-values,
+  .about-commitment {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+
+  .story-text h2,
+  .values-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-mission h2,
+  .about-ingredients h2 {
+    font-size: 1.8rem;
+  }
+
+  .commitment-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .story-text p,
+  .commitment-content p {
+    font-size: 1rem;
+  }
+
+  .image-placeholder {
+    width: 200px;
+    height: 200px;
+  }
+
+  .image-placeholder span {
+    font-size: 3rem;
+  }
+
+  .image-placeholder p {
+    font-size: 1rem;
+  }
+
+  .mission-card,
+  .ingredient-card {
+    padding: 1.5rem;
+  }
+
+  .mission-icon,
+  .ingredient-icon {
+    font-size: 2.5rem;
+  }
+
+  .values-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item {
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
