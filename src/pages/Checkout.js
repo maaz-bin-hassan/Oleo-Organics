@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { sendOrderConfirmationEmail } from '../services/emailService';
+import { saveOrderToFirebase } from '../services/firebaseOrderService';
 import './Checkout.css';
 
 const Checkout = () => {
@@ -132,6 +133,16 @@ const Checkout = () => {
       };
       
       console.log('📦 Order data prepared:', orderData);
+      
+      // Save order to Firebase for admin tracking
+      console.log('☁️ Saving order to Firebase...');
+      const saveResult = await saveOrderToFirebase(orderData);
+      console.log('☁️ Firebase save result:', saveResult);
+      
+      if (!saveResult.success) {
+        console.warn('⚠️ Failed to save to Firebase, order may not appear in admin dashboard');
+        // Continue with email sending even if Firebase save fails
+      }
       
       // Send order confirmation email
       setProcessingMessage('Sending confirmation email...');
