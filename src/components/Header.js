@@ -24,9 +24,12 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-content">
-          <Link to="/" className="logo" onClick={closeMenu}>
-            <span className="logo-text">Oleo Organics</span>
-            <span className="logo-subtitle">Natural Hair Care</span>
+          <Link to="/" className="logo" onClick={closeMenu} aria-label="Oleo Organics - Go to homepage">
+            <img 
+              src="/android-chrome-192x192.png" 
+              alt="Oleo Organics Logo" 
+              className="logo-image"
+            />
           </Link>
 
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
@@ -67,21 +70,22 @@ const Header = () => {
                   Contact
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link 
-                  to="/cart" 
-                  className={`nav-link cart-link ${isActiveLink('/cart') ? 'active' : ''}`}
-                  onClick={closeMenu}
-                >
-                  <span className="cart-icon">🛒</span>
-                  Cart
-                  {getCartItemsCount() > 0 && (
-                    <span className="cart-badge">{getCartItemsCount()}</span>
-                  )}
-                </Link>
-              </li>
             </ul>
           </nav>
+
+          <div className="header-actions">
+            <Link 
+              to="/cart" 
+              className={`cart-link ${isActiveLink('/cart') ? 'active' : ''}`}
+              onClick={closeMenu}
+            >
+              <span className="cart-icon">🛒</span>
+              <span className="cart-text">Cart</span>
+              {getCartItemsCount() > 0 && (
+                <span className="cart-badge">{getCartItemsCount()}</span>
+              )}
+            </Link>
+          </div>
 
           <button 
             className="menu-toggle"

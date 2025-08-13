@@ -9,7 +9,7 @@ const Home = () => {
 
   // Set page title and meta description for SEO
   useEffect(() => {
-    document.title = '🌿 Oleo Organics - Premium Organic Products | Natural & Sustainable';
+    document.title = 'Oleo Organics - Premium Organic Products | Natural & Sustainable';
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');

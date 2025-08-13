@@ -27,10 +27,25 @@
   font-size: 1.1rem;
 }
 
-.footer-logo p {
-  color: rgba(255, 255, 255, 0.8);
-  font-style: italic;
-  margin-top: 0.5rem;
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo a {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo a:hover {
+  transform: scale(1.1);
+}
+
+.footer-logo-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 }
 
 .footer-links {
@@ -176,6 +191,11 @@
 
   .footer-section {
     padding: 0 1rem;
+  }
+
+  .footer-logo-image {
+    width: 60px;
+    height: 60px;
   }
 
   .footer-bottom-links {

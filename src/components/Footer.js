@@ -11,8 +11,13 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-logo">
-              <h3>Oleo Organics</h3>
-              <p>Natural hair care for beautiful, healthy hair</p>
+              <Link to="/" aria-label="Oleo Organics - Go to homepage">
+                <img 
+                  src="/android-chrome-512x512.png" 
+                  alt="Oleo Organics Logo" 
+                  className="footer-logo-image"
+                />
+              </Link>
             </div>
           </div>
 

@@ -41,6 +41,7 @@ const ProductCard = ({ product, showAddToCart = true }) => {
         <div className="product-info">
           <h3 className="product-name">{product.name}</h3>
           <p className="product-category">{product.category}</p>
+          <p className="product-description">{product.shortDescription}</p>
           <div className="product-price">
             {formatPrice(product.price)}
           </div>
