@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://oleo-organics.vercel.app/</loc>
+    <lastmod>2025-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://oleo-organics.vercel.app/logo512.png</image:loc>
+      <image:title>Oleo Organics Logo</image:title>
+      <image:caption>Premium organic products for a healthier lifestyle</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Shop Page -->
+  <url>
+    <loc>https://oleo-organics.vercel.app/shop</loc>
+    <lastmod>2025-08-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://oleo-organics.vercel.app/about</loc>
+    <lastmod>2025-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://oleo-organics.vercel.app/contact</loc>
+    <lastmod>2025-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Cart Page -->
+  <url>
+    <loc>https://oleo-organics.vercel.app/cart</loc>
+    <lastmod>2025-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Product Pages -->
+  <url>
+    <loc>https://oleo-organics.vercel.app/product/1</loc>
+    <lastmod>2025-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://oleo-organics.vercel.app/static/media/1.jpeg</image:loc>
+      <image:title>Premium Organic Face Cream</image:title>
+      <image:caption>Natural moisturizing face cream with organic ingredients</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://oleo-organics.vercel.app/product/2</loc>
+    <lastmod>2025-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://oleo-organics.vercel.app/static/media/2.jpeg</image:loc>
+      <image:title>Organic Hair Oil</image:title>
+      <image:caption>Nourishing hair oil made from natural organic ingredients</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://oleo-organics.vercel.app/product/3</loc>
+    <lastmod>2025-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://oleo-organics.vercel.app/static/media/3.jpeg</image:loc>
+      <image:title>Natural Body Lotion</image:title>
+      <image:caption>Hydrating body lotion with organic botanical extracts</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://oleo-organics.vercel.app/product/4</loc>
+    <lastmod>2025-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://oleo-organics.vercel.app/static/media/4.jpeg</image:loc>
+      <image:title>Organic Hand Cream</image:title>
+      <image:caption>Moisturizing hand cream with natural organic ingredients</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://oleo-organics.vercel.app/product/5</loc>
+    <lastmod>2025-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://oleo-organics.vercel.app/static/media/5.jpeg</image:loc>
+      <image:title>Natural Face Serum</image:title>
+      <image:caption>Anti-aging face serum with organic plant extracts</image:caption>
+    </image:image>
+  </url>
+  
+</urlset>

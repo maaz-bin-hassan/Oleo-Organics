@@ -4,40 +4,106 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="theme-color" content="#3a6b1e" />
+    
+    <!-- Primary Meta Tags -->
+    <title>🌿 Oleo Organics - Premium Organic Products | Natural & Sustainable</title>
+    <meta name="title" content="🌿 Oleo Organics - Premium Organic Products | Natural & Sustainable" />
+    <meta name="description" content="Discover premium organic products at Oleo Organics. Natural, sustainable, and ethically sourced items for a healthier lifestyle. Shop eco-friendly products with fast delivery in Pakistan." />
+    <meta name="keywords" content="organic products Pakistan, natural health products, sustainable living, eco-friendly products, organic skincare, natural supplements, premium organic, healthy lifestyle, green products, organic food, natural beauty" />
+    <meta name="author" content="Oleo Organics" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://oleo-organics.vercel.app/" />
+    <meta property="og:title" content="🌿 Oleo Organics - Premium Organic Products | Natural & Sustainable" />
+    <meta property="og:description" content="Discover premium organic products at Oleo Organics. Natural, sustainable, and ethically sourced items for a healthier lifestyle." />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+    <meta property="og:site_name" content="Oleo Organics" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://oleo-organics.vercel.app/" />
+    <meta property="twitter:title" content="🌿 Oleo Organics - Premium Organic Products" />
+    <meta property="twitter:description" content="Discover premium organic products at Oleo Organics. Natural, sustainable, and ethically sourced items for a healthier lifestyle." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/logo512.png" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="geo.region" content="PK" />
+    <meta name="geo.country" content="Pakistan" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://oleo-organics.vercel.app/" />
+    
+    <!-- Favicon and Touch Icons -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.emailjs.com">
+    
+    <!-- Google Fonts for organic, natural feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Oleo Organics",
+      "url": "https://oleo-organics.vercel.app",
+      "logo": "https://oleo-organics.vercel.app/logo512.png",
+      "description": "Premium organic products for a healthier lifestyle. Natural, sustainable, and ethically sourced.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+92-XXX-XXXXXXX",
+        "contactType": "Customer Service",
+        "availableLanguage": ["English", "Urdu"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PK",
+        "addressRegion": "Pakistan"
+      },
+      "sameAs": [
+        "https://facebook.com/oleoorganics",
+        "https://instagram.com/oleoorganics"
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data - Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Oleo Organics",
+      "url": "https://oleo-organics.vercel.app",
+      "description": "Premium organic products for a healthier lifestyle",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://oleo-organics.vercel.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>🌿 Oleo Organics</h1>
+        <p>You need to enable JavaScript to run this app and browse our premium organic products.</p>
+        <p>Please enable JavaScript in your browser settings and refresh the page.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

@@ -1,31 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './About.css';
 
 const About = () => {
+  // Set page title and meta description for SEO
+  useEffect(() => {
+    document.title = 'About Oleo Organics - Natural Organic Products | Our Story & Mission';
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Learn about Oleo Organics - your trusted partner in natural organic hair care and skincare. Discover our story, mission, and commitment to sustainable, chemical-free beauty products in Pakistan.');
+    }
+  }, []);
+
   return (
     <div className="about">
       <div className="container">
         <div className="about-hero">
-          <h1>About Oleo Organics</h1>
-          <p>Your trusted partner in natural hair care</p>
+          <h1>About Oleo Organics - Natural Beauty Experts</h1>
+          <p>Your trusted partner in natural hair care and organic skincare since 2020</p>
         </div>
 
         <div className="about-content">
-          <section className="about-story">
+          <section className="about-story" aria-labelledby="story-heading">
             <div className="story-content">
               <div className="story-text">
-                <h2>Our Story</h2>
+                <h2 id="story-heading">Our Story - From Personal Journey to Natural Beauty Mission</h2>
                 <p>
                   Founded in 2020, Oleo Organics was born from a passion for natural beauty and 
-                  sustainable hair care. Our journey began when our founder, struggling with 
+                  sustainable hair care in Pakistan. Our journey began when our founder, struggling with 
                   damaged hair from chemical treatments, discovered the transformative power of 
-                  organic oils.
+                  organic oils and natural ingredients.
                 </p>
                 <p>
                   What started as a personal quest for healthier hair evolved into a mission to 
-                  share these incredible natural solutions with others. We believe that nature 
-                  provides the best ingredients for beautiful, healthy hair, and we're committed 
-                  to bringing you the purest, most effective organic hair oils.
+                  share these incredible natural solutions with others across Pakistan. We believe that nature 
+                  provides the best ingredients for beautiful, healthy hair and skin, and we're committed 
+                  to bringing you the purest, most effective organic beauty products.
                 </p>
               </div>
               <div className="story-image">
