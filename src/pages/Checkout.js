@@ -97,30 +97,18 @@ const Checkout = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    console.log('=== CHECKOUT DEBUG START ===');
-    console.log('Form submitted!');
-    console.log('Form data:', formData);
-    console.log('Cart items:', cartItems);
-    console.log('Cart total:', getCartTotal());
     
-    if (!validateForm()) {
-      console.log('❌ Form validation FAILED');
-      console.log('Errors:', errors);
-      return;
-    }
-
-    console.log('✅ Form validation PASSED');
     setIsProcessing(true);
     setProcessingMessage('Processing your order...');
 
     try {
-      console.log('🔄 Starting order processing...');
+      
       // Simulate order processing
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Generate order ID
       const orderId = `OO${Date.now()}`;
-      console.log('📋 Generated order ID:', orderId);
+      
       
       // Prepare order data for email
       const orderData = {
@@ -132,12 +120,12 @@ const Checkout = () => {
         total: getTotalWithShipping()
       };
       
-      console.log('📦 Order data prepared:', orderData);
+      
       
       // Save order to Firebase for admin tracking
-      console.log('☁️ Saving order to Firebase...');
+      ;
       const saveResult = await saveOrderToFirebase(orderData);
-      console.log('☁️ Firebase save result:', saveResult);
+      
       
       if (!saveResult.success) {
         console.warn('⚠️ Failed to save to Firebase, order may not appear in admin dashboard');
@@ -146,23 +134,23 @@ const Checkout = () => {
       
       // Send order confirmation email
       setProcessingMessage('Sending confirmation email...');
-      console.log('📧 Attempting to send email...');
+     
       const emailResult = await sendOrderConfirmationEmail(orderData);
       
-      console.log('📧 Email result:', emailResult);
+      
       
       if (emailResult.success) {
-        console.log('✅ Email sent successfully');
+        
         setProcessingMessage('Order complete! Redirecting...');
       } else {
-        console.log('❌ Email failed, but continuing');
+       
         setProcessingMessage('Order placed successfully! Redirecting...');
       }
       
       // Brief pause to show success message
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      console.log('🗑️ Clearing cart...');
+     
       // Clear cart
       clearCart();
       
@@ -177,15 +165,14 @@ const Checkout = () => {
         emailSent: emailResult.success
       };
       
-      console.log('🔄 Navigation data:', navigationData);
-      console.log('🔄 Navigating to order success...');
+      
       
       // Use setTimeout to ensure navigation happens after current render cycle
       setTimeout(() => {
         navigate('/order-success', { 
           state: navigationData
         });
-        console.log('✅ Navigation complete');
+       
       }, 100);
     } catch (error) {
       console.error('💥 Order processing failed:', error);
@@ -193,7 +180,7 @@ const Checkout = () => {
       setProcessingMessage('');
     }
     
-    console.log('=== CHECKOUT DEBUG END ===');
+   
   };
 
   // Don't render if cart is empty (useEffect will handle navigation)

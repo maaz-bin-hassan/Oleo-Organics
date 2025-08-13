@@ -14,7 +14,7 @@ const isConfigured = SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY &&
 // Initialize EmailJS if properly configured
 if (isConfigured) {
   emailjs.init(PUBLIC_KEY);
-  console.log('EmailJS initialized successfully');
+  
 } else {
   console.warn('EmailJS not configured. Please set environment variables in .env file');
 }
@@ -56,17 +56,17 @@ export const sendOrderConfirmationEmail = async (orderData) => {
     })
   };
   
-  console.log('📧 Template parameters:', templateParams);
+  
   
   try {
-    console.log('Sending email with EmailJS...');
+    
     const response = await emailjs.send(
       SERVICE_ID,
       TEMPLATE_ID,
       templateParams
     );
     
-    console.log('Email sent successfully:', response);
+    
     return { success: true, response };
   } catch (error) {
     console.error('Failed to send email:', error);
@@ -87,20 +87,11 @@ const formatPrice = (price) => {
 export const sendOrderConfirmationEmailDemo = async (orderData) => {
   const { orderId, customerInfo, items, subtotal, shipping, total } = orderData;
   
-  console.log('=== ORDER CONFIRMATION EMAIL (DEMO) ===');
-  console.log(`To: ${customerInfo.email}`);
-  console.log(`Customer: ${customerInfo.firstName} ${customerInfo.lastName}`);
-  console.log(`Order ID: ${orderId}`);
-  console.log(`Order Date: ${new Date().toLocaleDateString('en-PK')}`);
-  console.log('--- Order Items ---');
+ 
   items.forEach(item => {
-    console.log(`${item.name} x ${item.quantity} = ${formatPrice(item.price * item.quantity)}`);
+    
   });
-  console.log(`Subtotal: ${formatPrice(subtotal)}`);
-  console.log(`Shipping: ${formatPrice(shipping)}`);
-  console.log(`Total: ${formatPrice(total)}`);
-  console.log(`Delivery Address: ${customerInfo.address}, ${customerInfo.city}`);
-  console.log('=====================================');
+ 
   
   // Simulate email sending delay
   await new Promise(resolve => setTimeout(resolve, 1000));

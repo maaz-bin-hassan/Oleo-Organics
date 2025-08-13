@@ -6,13 +6,7 @@ const OrderSuccess = () => {
   const location = useLocation();
   const { orderId, customerInfo, items, subtotal, shipping, total, emailSent } = location.state || {};
 
-  console.log('=== ORDER SUCCESS DEBUG ===');
-  console.log('Location state:', location.state);
-  console.log('Order ID:', orderId);
-  console.log('Customer info:', customerInfo);
-  console.log('Items:', items);
-  console.log('Email sent:', emailSent);
-  console.log('========================');
+ 
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-PK', {

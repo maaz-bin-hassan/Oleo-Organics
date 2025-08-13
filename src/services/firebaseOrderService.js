@@ -25,7 +25,7 @@ export const saveOrderToFirebase = async (orderData) => {
     
     const docRef = await addDoc(collection(db, ORDERS_COLLECTION), newOrder);
     
-    console.log('Order saved to Firebase with ID:', docRef.id);
+   
     return { success: true, order: { ...newOrder, id: docRef.id } };
   } catch (error) {
     console.error('Failed to save order to Firebase:', error);

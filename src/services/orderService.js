@@ -17,7 +17,7 @@ export const saveOrder = (orderData) => {
     const updatedOrders = [newOrder, ...existingOrders];
     localStorage.setItem(ORDER_STORAGE_KEY, JSON.stringify(updatedOrders));
     
-    console.log('Order saved successfully:', newOrder);
+    
     return { success: true, order: newOrder };
   } catch (error) {
     console.error('Failed to save order:', error);
