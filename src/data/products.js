@@ -1,6 +1,50 @@
 // Import images from assets folder
 import productImage from '../assets/product.jpg';
 
+// Fake reviews data
+const generateReviews = (productId, count) => {
+  const reviewTemplates = [
+    { rating: 5, text: "Amazing product! My hair has never felt softer and healthier. Highly recommend!", author: "Sarah Ahmed", date: "2024-12-15" },
+    { rating: 4, text: "Great quality oil, noticed improvement in hair texture within weeks. Will buy again.", author: "Fatima Khan", date: "2024-12-10" },
+    { rating: 5, text: "Love this organic formula! No chemicals, just pure natural goodness for my hair.", author: "Ayesha Ali", date: "2024-12-08" },
+    { rating: 4, text: "Good product, effective for hair growth. Fast delivery and excellent packaging.", author: "Zara Sheikh", date: "2024-12-05" },
+    { rating: 5, text: "Best hair oil I've ever used! My hair fall reduced significantly. Thank you Oleo Organics!", author: "Mariam Hassan", date: "2024-12-01" },
+    { rating: 4, text: "Natural ingredients and great results. My scalp feels healthier and hair is shinier.", author: "Hina Malik", date: "2024-11-28" },
+    { rating: 5, text: "Excellent product quality. Hair feels nourished and strong. Worth every penny!", author: "Khadija Raza", date: "2024-11-25" },
+    { rating: 4, text: "Really good for dry hair. The natural oils blend perfectly and smell amazing too.", author: "Saba Tariq", date: "2024-11-20" }
+  ];
+
+  const productSpecificReviews = {
+    1: [
+      { rating: 5, text: "The coconut and argan oil combination is perfect! My hair is so much healthier now.", author: "Nadia Iqbal", date: "2024-12-18" },
+      { rating: 4, text: "Love the natural coconut smell and how it makes my hair silky smooth.", author: "Rabia Nawaz", date: "2024-12-12" }
+    ],
+    2: [
+      { rating: 5, text: "The rosemary mint scent is refreshing and it really stimulates my scalp!", author: "Amna Siddique", date: "2024-12-16" },
+      { rating: 4, text: "Great for scalp circulation. I can feel the cooling mint effect immediately.", author: "Samina Shah", date: "2024-12-09" }
+    ],
+    3: [
+      { rating: 4, text: "Perfect for my sensitive scalp. The lavender scent is so calming and relaxing.", author: "Farah Butt", date: "2024-12-14" },
+      { rating: 5, text: "Chamomile and lavender work wonders for my hair. No irritation at all!", author: "Nighat Khan", date: "2024-12-07" }
+    ],
+    4: [
+      { rating: 5, text: "Black seed oil is amazing for hair growth! Noticed new hair growth within a month.", author: "Rubina Ahmed", date: "2024-12-13" },
+      { rating: 4, text: "Premium quality Moroccan black seed oil. Really helps with hair strengthening.", author: "Shazia Malik", date: "2024-12-06" }
+    ],
+    5: [
+      { rating: 4, text: "Hibiscus and amla combination is traditional and effective. Hair feels thicker!", author: "Nasreen Ali", date: "2024-12-11" },
+      { rating: 5, text: "Love this Ayurvedic blend! My hair has more volume and less graying.", author: "Shahnaz Sheikh", date: "2024-12-04" }
+    ]
+  };
+
+  // Combine general reviews with product-specific ones
+  const allReviews = [...reviewTemplates, ...(productSpecificReviews[productId] || [])];
+  
+  // Shuffle and return the requested count
+  const shuffled = allReviews.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+};
+
 export const products = [
   {
     id: 1,
@@ -17,7 +61,8 @@ export const products = [
     featured: true,
     rating: 4.8,
     reviews: 127,
-    sku: "OO-CO-001"
+    sku: "OO-CO-001",
+    detailedReviews: generateReviews(1, 6)
   },
   {
     id: 2,
@@ -34,7 +79,8 @@ export const products = [
     featured: true,
     rating: 4.7,
     reviews: 98,
-    sku: "OO-RM-002"
+    sku: "OO-RM-002",
+    detailedReviews: generateReviews(2, 5)
   },
   {
     id: 3,
@@ -51,7 +97,8 @@ export const products = [
     featured: false,
     rating: 4.6,
     reviews: 73,
-    sku: "OO-LC-003"
+    sku: "OO-LC-003",
+    detailedReviews: generateReviews(3, 4)
   },
   {
     id: 4,
@@ -68,7 +115,8 @@ export const products = [
     featured: true,
     rating: 4.9,
     reviews: 156,
-    sku: "OO-BS-004"
+    sku: "OO-BS-004",
+    detailedReviews: generateReviews(4, 7)
   },
   {
     id: 5,
@@ -85,7 +133,8 @@ export const products = [
     featured: false,
     rating: 4.5,
     reviews: 89,
-    sku: "OO-HA-005"
+    sku: "OO-HA-005",
+    detailedReviews: generateReviews(5, 5)
   }
 ];
 

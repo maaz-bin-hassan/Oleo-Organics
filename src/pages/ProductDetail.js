@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { getProductById } from '../data/products';
+import StarRating from '../components/StarRating';
+import ReviewsSection from '../components/ReviewsSection';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -84,6 +86,16 @@ const ProductDetail = () => {
             <div className="product-header">
               <span className="product-category">{product.category}</span>
               <h1 className="product-title">{product.name}</h1>
+              
+              <div className="product-rating-section">
+                <StarRating 
+                  rating={product.rating} 
+                  size="medium" 
+                  showRating={true}
+                />
+                <span className="reviews-link">({product.reviews} customer reviews)</span>
+              </div>
+              
               <div className="product-price">
                 {formatPrice(product.price)}
               </div>
@@ -179,6 +191,8 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
+
+        <ReviewsSection product={product} />
       </div>
     </div>
   );

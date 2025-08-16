@@ -24,7 +24,7 @@ export const sendOrderConfirmationEmail = async (orderData) => {
   // Check if EmailJS is properly configured
   if (!isConfigured) {
     console.warn('EmailJS not configured, using demo mode');
-    return sendOrderConfirmationEmailDemo(orderData);
+    return sendOrderConfirmationEmail(orderData);
   }
 
   const { orderId, customerInfo, items, subtotal, shipping, total } = orderData;

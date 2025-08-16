@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import StarRating from './StarRating';
 import './ProductCard.css';
 
 const ProductCard = ({ product, showAddToCart = true }) => {
@@ -42,6 +43,16 @@ const ProductCard = ({ product, showAddToCart = true }) => {
           <h3 className="product-name">{product.name}</h3>
           <p className="product-category">{product.category}</p>
           <p className="product-description">{product.shortDescription}</p>
+          
+          <div className="product-rating">
+            <StarRating 
+              rating={product.rating} 
+              size="small" 
+              showRating={false}
+            />
+            <span className="reviews-count">({product.reviews} reviews)</span>
+          </div>
+          
           <div className="product-price">
             {formatPrice(product.price)}
           </div>

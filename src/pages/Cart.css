@@ -110,7 +110,7 @@
 }
 
 .clear-cart-btn {
-  background: transparent;
+  
   border: 2px solid #ff6b6b;
   color: #ff6b6b;
   padding: 0.5rem 1rem;
@@ -223,11 +223,11 @@
   width: 32px;
   height: 32px;
   border: none;
-  background: white;
+  background: linear-gradient(135deg, #789963, #9cb36d);
   border-radius: 50%;
   font-size: 1rem;
   font-weight: 600;
-  color: #789963;
+  color: white;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -237,9 +237,10 @@
 }
 
 .quantity-btn:hover {
-  background: #789963;
+  background: linear-gradient(135deg, #6a8555, #8aa05f);
   color: white;
   transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(120, 153, 99, 0.3);
 }
 
 .quantity-display {

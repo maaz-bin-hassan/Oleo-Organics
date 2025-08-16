@@ -1,0 +1,80 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.star {
+  color: #ddd;
+  transition: color 0.2s ease;
+}
+
+.star.full {
+  color: #ffc107;
+}
+
+.star.half {
+  position: relative;
+  color: #ddd;
+}
+
+.star-half {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #ffc107;
+}
+
+.star.empty {
+  color: #ddd;
+}
+
+.rating-number {
+  font-size: 0.9rem;
+  color: #666;
+  margin-left: 0.25rem;
+  font-weight: 500;
+}
+
+/* Size variations */
+.star-rating.small .star {
+  font-size: 0.9rem;
+}
+
+.star-rating.medium .star {
+  font-size: 1.1rem;
+}
+
+.star-rating.large .star {
+  font-size: 1.3rem;
+}
+
+.star-rating.small .rating-number {
+  font-size: 0.8rem;
+}
+
+.star-rating.medium .rating-number {
+  font-size: 0.9rem;
+}
+
+.star-rating.large .rating-number {
+  font-size: 1rem;
+}
+
+/* Product card specific styling */
+.product-card .star-rating {
+  margin-bottom: 0.5rem;
+}
+
+/* Product detail specific styling */
+.product-detail .star-rating {
+  margin-bottom: 1rem;
+}

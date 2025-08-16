@@ -160,6 +160,25 @@
   line-height: 1.2;
 }
 
+.product-rating-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.reviews-link {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.reviews-link:hover {
+  color: #789963;
+}
+
 .product-price {
   font-size: 2rem;
   color: #789963;

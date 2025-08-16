@@ -91,6 +91,12 @@
   transform: translateY(-2px);
 }
 
+/* Override active cart link color when on cart page */
+.cart-link.active.active {
+  color: #333 !important;
+  background: rgba(0, 0, 0, 0.05);
+}
+
 .nav-item {
   position: relative;
 }
@@ -115,7 +121,7 @@
   transform: translateY(-2px);
 }
 
-.cart-link {
+.cart-link:not(.active) {
   background: linear-gradient(135deg, #789963, #9cb36d);
   color: white !important;
   position: relative;
@@ -127,7 +133,9 @@
 }
 
 .cart-icon {
-  font-size: 1.1rem;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 .cart-badge {
