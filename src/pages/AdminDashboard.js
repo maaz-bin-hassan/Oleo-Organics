@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { 
   getOrdersFromFirebase, 
@@ -18,56 +17,8 @@ const AdminDashboard = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [sessionTimeLeft, setSessionTimeLeft] = useState(null);
   
-  const { currentUser, logout, sessionStartTime, isSessionValid } = useContext(AuthContext);
-  const navigate = useNavigate();
-
-  // Session timeout warning
-  const SESSION_TIMEOUT = 15 * 60 * 1000; // 15 minutes
-  const WARNING_TIME = 2 * 60 * 1000; // Show warning 2 minutes before timeout
-
-  useEffect(() => {
-    // Check session validity on component mount
-    if (!isSessionValid()) {
-      handleLogout();
-      return;
-    }
-
-    loadOrders();
-    loadStats();
-  }, []);
-
-  // Update session timer
-  useEffect(() => {
-    const updateTimer = () => {
-      if (sessionStartTime) {
-        const elapsed = Date.now() - sessionStartTime;
-        const remaining = SESSION_TIMEOUT - elapsed;
-        setSessionTimeLeft(remaining);
-
-        // Auto logout when session expires
-        if (remaining <= 0) {
-          alert('Your admin session has expired. You will be logged out for security.');
-          handleLogout();
-        } 
-        // Show warning when 2 minutes left
-        else if (remaining <= WARNING_TIME && remaining > WARNING_TIME - 1000) {
-          alert('Your admin session will expire in 2 minutes. Please save any work.');
-        }
-      }
-    };
-
-    const interval = setInterval(updateTimer, 1000);
-    return () => clearInterval(interval);
-  }, [sessionStartTime]);
-
-  const formatTimeLeft = (milliseconds) => {
-    if (!milliseconds || milliseconds <= 0) return '00:00';
-    const minutes = Math.floor(milliseconds / 60000);
-    const seconds = Math.floor((milliseconds % 60000) / 1000);
-    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-  };
+  const { currentUser, logout } = useContext(AuthContext);
 
   useEffect(() => {
     loadOrders();
@@ -150,11 +101,8 @@ const AdminDashboard = () => {
   const handleLogout = async () => {
     try {
       await logout();
-      navigate('/admin-login');
     } catch (error) {
       console.error('Logout error:', error);
-      // Force navigation even if logout fails
-      navigate('/admin-login');
     }
   };
 
@@ -189,15 +137,7 @@ const AdminDashboard = () => {
             <p>Manage orders and track customer information</p>
           </div>
           <div className="admin-user-info">
-            <div className="session-info">
-              <span>Welcome, {currentUser?.email}</span>
-              <div className="session-timer">
-                Session: {formatTimeLeft(sessionTimeLeft)}
-                {sessionTimeLeft && sessionTimeLeft <= WARNING_TIME && (
-                  <span className="session-warning">⚠️</span>
-                )}
-              </div>
-            </div>
+            <span>Welcome, {currentUser?.email}</span>
             <button onClick={handleLogout} className="logout-btn">
               Logout
             </button>
