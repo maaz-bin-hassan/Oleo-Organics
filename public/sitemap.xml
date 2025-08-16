@@ -54,7 +54,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://oleo-organics.vercel.app/static/media/1.jpeg</image:loc>
+      <image:loc>https://oleo-organics.vercel.app/static/media/product.jpg</image:loc>
       <image:title>Premium Organic Face Cream</image:title>
       <image:caption>Natural moisturizing face cream with organic ingredients</image:caption>
     </image:image>
@@ -66,7 +66,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://oleo-organics.vercel.app/static/media/2.jpeg</image:loc>
+      <image:loc>https://oleo-organics.vercel.app/static/media/product.jpg</image:loc>
       <image:title>Organic Hair Oil</image:title>
       <image:caption>Nourishing hair oil made from natural organic ingredients</image:caption>
     </image:image>
@@ -78,7 +78,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://oleo-organics.vercel.app/static/media/3.jpeg</image:loc>
+      <image:loc>https://oleo-organics.vercel.app/static/media/product.jpg</image:loc>
       <image:title>Natural Body Lotion</image:title>
       <image:caption>Hydrating body lotion with organic botanical extracts</image:caption>
     </image:image>
@@ -90,7 +90,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://oleo-organics.vercel.app/static/media/4.jpeg</image:loc>
+      <image:loc>https://oleo-organics.vercel.app/static/media/product.jpg</image:loc>
       <image:title>Organic Hand Cream</image:title>
       <image:caption>Moisturizing hand cream with natural organic ingredients</image:caption>
     </image:image>
@@ -102,7 +102,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://oleo-organics.vercel.app/static/media/5.jpeg</image:loc>
+      <image:loc>https://oleo-organics.vercel.app/static/media/product.jpg</image:loc>
       <image:title>Natural Face Serum</image:title>
       <image:caption>Anti-aging face serum with organic plant extracts</image:caption>
     </image:image>
